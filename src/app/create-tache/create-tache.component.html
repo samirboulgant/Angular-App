@@ -1,0 +1,66 @@
+<div class="container">
+  <div class="text-center mt-5">
+    <h1>Task Creation Form</h1>
+  </div>
+  <div class="row">
+    <div class="col-lg-7 mx-auto">
+      <div class="card mt-2 mx-auto p-4 bg-light">
+        <div class="card-body bg-light">
+          <div class="container">
+            <form (ngSubmit)="onSubmit()" id="contact-form" role="form">
+              <div class="controls">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <label for="form_message">Descreption *</label>
+                      <textarea
+                        id="descreption"
+                        [(ngModel)]="tache.descreption"
+                        name="descreption"
+                        class="form-control"
+                        placeholder="Write descreption here."
+                        rows="4"
+                        required="required"
+                        data-error="Please, leave us a descreption."
+                      ></textarea>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="form_need">Please specify Status *</label>
+                        <select
+                          id="etat"
+                          [(ngModel)]="tache.etat"
+                          name="etat"
+                          class="form-control"
+                          required="required"
+                          data-error="Please specify your need."
+                        >
+                          <option selected disabled>--Select Status--</option>
+                          <option>AFAIRE</option>
+                          <option>ENCOURS</option>
+                          <option>TERMINER</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <br /><br />
+
+                  <div style="margin-top: 20px">
+                    <input
+                      style="font-weight: bold"
+                      type="submit"
+                      class="btn btn-success btn-send pt-2 btn-block"
+                      value="Create Task"
+                    />
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
